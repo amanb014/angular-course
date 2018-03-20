@@ -1,0 +1,9 @@
+<app-header (navSelection)="navChangeHandler($event)"></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-recipes *ngIf="current === 'recipes'" ></app-recipes>
+      <app-shopping-list *ngIf="current === 'shopping-list'"></app-shopping-list>
+    </div>
+  </div>
+</div>
