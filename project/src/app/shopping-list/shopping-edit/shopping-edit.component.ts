@@ -8,17 +8,17 @@ import { ShoppingListService } from '../../services/shopping-list.service';
   styleUrls: ['./shopping-edit.component.css']
 })
 export class ShoppingEditComponent implements OnInit {
-  @ViewChild('inputName') nameRef: ElementRef;
-  @ViewChild('inputAmount') amtRef: ElementRef;
+  @ViewChild('inputName') nameRef: ElementRef
+  @ViewChild('inputAmount') amtRef: ElementRef
   
   constructor(private slService: ShoppingListService) { }
   ngOnInit() {
   }
 
   onAddHandler() {
-    const name = this.nameRef.nativeElement.value;
-    const amt = this.amtRef.nativeElement.value;
-    const newIngredient = new Ingredient(name, amt);
+    const name = this.nameRef.nativeElement.value
+    const amt = this.amtRef.nativeElement.value
+    const newIngredient = new Ingredient(name, amt)
     this.slService.addIngredient(newIngredient)
   }
 }

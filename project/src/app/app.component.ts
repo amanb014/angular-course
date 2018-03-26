@@ -6,8 +6,8 @@ import { Component, Output, EventEmitter} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  current:string = 'recipes';
+  current:string = 'recipes'
   navChangeHandler(selection: string) {
-    this.current = selection;
+    this.current = selection
   }
 }
