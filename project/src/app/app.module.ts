@@ -15,6 +15,9 @@ import { DropdownDirective } from './directives/dropdown.directive';
 import { Route } from '@angular/compiler/src/core';
 
 
+import { ShoppingListService } from './services/shopping-list.service';
+import { RecipeService } from './services/recipe.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +35,7 @@ import { Route } from '@angular/compiler/src/core';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ShoppingListService, RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

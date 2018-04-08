@@ -5,10 +5,10 @@ import { Component, Output, EventEmitter } from '@angular/core';
   templateUrl: './header.component.html'
 })
 export class HeaderComponent {
-  @Output() navSelection = new EventEmitter<string>();
+  @Output() navSelection = new EventEmitter<string>()
 
   onNavChange(selection: string) {
-    console.log(selection);
-    this.navSelection.emit(selection);
+    console.log(selection)
+    this.navSelection.emit(selection)
   }
 }
