@@ -14,7 +14,7 @@ const routes = [
       children: [
         { path: ':id/:name',  component: UserComponent },
       ]},
-  { path: 'servers', canActivate: [AppRouteGuard], component: ServersComponent,
+  { path: 'servers', canActivateChild: [AppRouteGuard], component: ServersComponent,
       children: [
         { path: ':id', component: ServerComponent },
         { path: ':id/edit', component: EditServerComponent }
