@@ -12,6 +12,8 @@ import { EditServerComponent } from './servers/edit-server/edit-server.component
 import { ServerComponent } from './servers/server/server.component';
 import { ServersService } from './servers/servers.service';
 import { AppRoutingModule } from './app.routing.module';
+import { AuthService } from './auth.service';
+import { AppRouteGuard } from './route-goard.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,7 @@ import { AppRoutingModule } from './app.routing.module';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ServersService],
+  providers: [ServersService, AuthService, AppRouteGuard],
   bootstrap: [AppComponent],
 
 })
