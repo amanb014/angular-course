@@ -5,12 +5,14 @@ export class RecipeService {
   
   private recipes: Recipe[] = [
     new Recipe(
+      1,
       'Pizza',
       'This is simply the best way to make pizza here.',
       'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
       [new Ingredient('Cheese', 4), new Ingredient('Bread', 1), new Ingredient('Vegetables', 5)]),
 
       new Recipe(
+        2,
         'Salad',
         'This is simply the best way to make salad here.',
         'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
@@ -21,5 +23,11 @@ export class RecipeService {
 
   getRecipes() {
     return [...this.recipes]
+  }
+
+  getRecipe(id: number) {
+    for(let el of this.recipes) {
+      if(el.id == id) return el;
+    }
   }
 }
