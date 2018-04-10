@@ -7,6 +7,8 @@ import { ServerComponent } from "./servers/server/server.component";
 import { EditServerComponent } from "./servers/edit-server/edit-server.component";
 import { RouterModule } from "@angular/router";
 import { AppRouteGuard } from "./route-goard.service";
+import { ErrorMessageComponent } from "./error.component";
+import { ServerResolver } from "./services/server.resolver";
 
 const routes = [
   { path: '',       component: HomeComponent },
@@ -16,10 +18,11 @@ const routes = [
       ]},
   { path: 'servers', canActivateChild: [AppRouteGuard], component: ServersComponent,
       children: [
-        { path: ':id', component: ServerComponent },
+        { path: ':id', component: ServerComponent, resolve: {server: ServerResolver} },
         { path: ':id/edit', component: EditServerComponent }
       ]},
-  { path: '**', redirectTo: '/' }
+  { path: 'error', component: ErrorMessageComponent, data: {message: 'Sorry! This page was not found.'}},
+  { path: '**', redirectTo: 'error'}
 ];
 
 @NgModule({

@@ -14,6 +14,8 @@ import { ServersService } from './servers/servers.service';
 import { AppRoutingModule } from './app.routing.module';
 import { AuthService } from './auth.service';
 import { AppRouteGuard } from './route-goard.service';
+import { ErrorMessageComponent } from './error.component';
+import { ServerResolver } from './services/server.resolver';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { AppRouteGuard } from './route-goard.service';
     ServersComponent,
     UserComponent,
     EditServerComponent,
-    ServerComponent
+    ServerComponent,
+    ErrorMessageComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,7 @@ import { AppRouteGuard } from './route-goard.service';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ServersService, AuthService, AppRouteGuard],
+  providers: [ServersService, AuthService, AppRouteGuard, ServerResolver],
   bootstrap: [AppComponent],
 
 })
