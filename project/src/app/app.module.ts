@@ -17,6 +17,7 @@ import { Route } from '@angular/compiler/src/core';
 
 import { ShoppingListService } from './services/shopping-list.service';
 import { RecipeService } from './services/recipe.service';
+import { AppRoutingModule } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { RecipeService } from './services/recipe.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [ShoppingListService, RecipeService],
   bootstrap: [AppComponent]
